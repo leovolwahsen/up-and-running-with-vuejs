@@ -11,8 +11,13 @@
 
   <div id="app">
     <label for="name">Name: </label>
-    <input type="text" id="name" name="name" v-model="name" />
-    <p v-show="name != ''"> Hello, {{ name }}</p>
+    <input 
+      type="text" 
+      id="name" name="name" 
+      v-model="name" 
+      v-on:input="updatedName"
+      />
+    <p v-show="name !== ''"> Hello, {{ name }}</p>
   </div>
 
   <script>
@@ -20,6 +25,12 @@
       el: '#app',
       data: {
         name: ''
+      },
+      methods: {
+        updatedName() {
+          this.name = this.$event.target.value;
+          this.$forceUpdate();
+        }
       }
     })
   </script>

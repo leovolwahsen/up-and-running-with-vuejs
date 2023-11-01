@@ -17,14 +17,15 @@
 
   <script>
     $(document).ready(function () {
-      const greeting = $('.greeting');
+      const greeting = $('.greeting')
 
-      $('#name').keyup(function (e) {
-        const name = $(this).val();
-        greeting.empty();
-        greeting.append('Hello, ' + name);
+
+      $('#name').keyup(function(e) {
+        const name = $(this).val()
+        greeting.empty()
+        greeting.append('Hello, ' + name)
+      })
       });
-    });
   </script>
 </body>
 </html>
